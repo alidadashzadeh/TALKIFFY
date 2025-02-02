@@ -50,7 +50,7 @@ function MainContent() {
 					</div>
 
 					<div
-						className="w-full overflow-y-scroll scroll-smooth h-full p-2"
+						className="w-full overflow-y-scroll h-full p-2"
 						ref={chatContainerRef}
 					>
 						{messages?.length === 0 ? (

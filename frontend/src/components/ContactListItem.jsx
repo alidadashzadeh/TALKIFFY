@@ -29,7 +29,14 @@ function ContactListItem({ contact }) {
 				handleClick();
 			}}
 		>
-			<Avatar alt={contact.username} src={contact.avatar} />
+			<Avatar
+				alt={contact.username}
+				src={
+					import.meta.env.MODE === "development"
+						? `http://localhost:5001/avatars/${contact.avatar}`
+						: `https://talkiffy.onrender.com/avatars/${contact.avatar}`
+				}
+			/>
 			<div className="flex-col hidden sm:flex ">
 				<p className=" font-bold text-text__primary lg:hidden">
 					{contact.username.length < 6

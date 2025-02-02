@@ -33,7 +33,11 @@ function ProfilePage() {
 					<img
 						className="size-32 rounded-full object-cover border-4"
 						alt="profile"
-						src={currentUser?.avatar}
+						src={
+							import.meta.env.MODE === "development"
+								? `http://localhost:5001/avatars/${currentUser.avatar}`
+								: `https://talkiffy.onrender.com/avatars/${currentUser.avatar}`
+						}
 					/>
 
 					<Button

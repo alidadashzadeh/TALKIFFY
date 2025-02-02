@@ -49,7 +49,7 @@ export const resizeUserPhoto = (req, res, next) => {
 		.resize(500, 500)
 		.toFormat("jpeg")
 		.jpeg({ quality: 90 })
-		.toFile(path.join(__dirname, `../../frontend/public/${req.file.filename}`));
+		.toFile(path.join(__dirname, `../avatars/${req.file.filename}`));
 
 	next();
 };

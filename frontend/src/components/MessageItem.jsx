@@ -29,8 +29,12 @@ function MessageItem({ message }) {
 					}
 					src={
 						message.senderId === currentUser?._id
-							? currentUser?.avatar
-							: currentContact?.avatar
+							? import.meta.env.MODE === "development"
+								? `http://localhost:5001/avatars/${currentUser.avatar}`
+								: `https://talkiffy.onrender.com/avatars/${currentUser.avatar}`
+							: import.meta.env.MODE === "development"
+							? `http://localhost:5001/avatars/${currentContact.avatar}`
+							: `https://talkiffy.onrender.com/avatars/${currentContact.avatar}`
 					}
 				/>
 			) : (

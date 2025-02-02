@@ -22,7 +22,14 @@ function SidebarFooter() {
 				}}
 			>
 				{currentUser.avatar ? (
-					<Avatar alt={currentUser?.username} src={currentUser.avatar} />
+					<Avatar
+						alt={currentUser?.username}
+						src={
+							import.meta.env.MODE === "development"
+								? `http://localhost:5001/avatars/${currentUser.avatar}`
+								: `https://talkiffy.onrender.com/avatars/${currentUser.avatar}`
+						}
+					/>
 				) : (
 					<AccountCircleIcon fontSize="large" />
 				)}

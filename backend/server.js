@@ -30,7 +30,8 @@ app.use(
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/messages", messageRouter);
 
-app.use("/public", express.static(path.join(__dirname, "../frontend/public")));
+// app.use("/public", express.static(path.join(__dirname, "../frontend/public")));
+app.use("/avatars", express.static(path.join(__dirname, "/avatars")));
 
 mongoose
 	.connect(process.env.MONGODB_URI, {})
