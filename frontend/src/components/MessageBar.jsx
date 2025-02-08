@@ -1,8 +1,11 @@
-import { useForm } from "react-hook-form";
-import useSendMessage from "../hooks/useSendMessage";
 import { useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
+
 import { LuSend } from "react-icons/lu";
 
+import useSendMessage from "../hooks/useSendMessage";
+
+// eslint-disable-next-line react/prop-types
 function MessageBar({ loading }) {
 	const { register, handleSubmit, reset } = useForm();
 	const { sendMessage } = useSendMessage();

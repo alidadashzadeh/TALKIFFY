@@ -1,12 +1,13 @@
-import { Avatar } from "@mui/material";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-
 import { useNavigate } from "react-router-dom";
 
+import { Avatar } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SettingsIcon from "@mui/icons-material/Settings";
-import useLogout from "../hooks/useLogout";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+
 import { useAuthContext } from "../contexts/AuthContext";
+
+import useLogout from "../hooks/useLogout";
 
 function SidebarFooter() {
 	const { currentUser } = useAuthContext();

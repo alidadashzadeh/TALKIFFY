@@ -1,9 +1,10 @@
-import toast from "react-hot-toast";
 import { useState } from "react";
 
 import { handleErrorToast } from "../utils/errorHandler";
 import { useAuthContext } from "../contexts/AuthContext";
+
 import { axiosInstance } from "../utils/axios";
+import toast from "react-hot-toast";
 
 function useLogout() {
 	const [loading, setLoading] = useState(false);

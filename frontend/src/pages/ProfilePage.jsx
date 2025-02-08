@@ -1,17 +1,17 @@
-import { Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+
+import { Button } from "@mui/material";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 
 import { useAuthContext } from "../contexts/AuthContext";
-
-import { useNavigate } from "react-router-dom";
 import useUploadImage from "../hooks/useUploadImage";
 
 function ProfilePage() {
 	const { currentUser } = useAuthContext();
-	const { handleImageUpload } = useUploadImage();
+	const { loading, handleImageUpload } = useUploadImage();
 	const navigate = useNavigate();
 
 	return (
@@ -45,6 +45,7 @@ function ProfilePage() {
 						variant="standard"
 						component="label"
 						startIcon={<CameraAltIcon />}
+						disabled={loading}
 					>
 						<input
 							type="file"

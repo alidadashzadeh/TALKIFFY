@@ -1,6 +1,8 @@
-import { useContactContext } from "../contexts/ContactContext";
 import { useEffect } from "react";
+
+import { useContactContext } from "../contexts/ContactContext";
 import { useSocketContext } from "../contexts/SocketContext";
+
 import { axiosInstance } from "../utils/axios";
 
 function useSeenMessagesOnClick() {

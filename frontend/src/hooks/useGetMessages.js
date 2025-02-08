@@ -1,7 +1,9 @@
 import { useCallback, useState } from "react";
-import { handleErrorToast } from "../utils/errorHandler";
+
 import { useContactContext } from "../contexts/ContactContext.jsx";
 import { useMessagesContext } from "../contexts/MessagesContext.jsx";
+
+import { handleErrorToast } from "../utils/errorHandler";
 import { axiosInstance } from "../utils/axios.js";
 
 function useGetMessages() {

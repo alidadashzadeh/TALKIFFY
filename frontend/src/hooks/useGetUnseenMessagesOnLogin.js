@@ -1,7 +1,9 @@
 import { useEffect } from "react";
+
 import { useMessagesContext } from "../contexts/MessagesContext";
-import { handleErrorToast } from "../utils/errorHandler";
 import { useAuthContext } from "../contexts/AuthContext";
+
+import { handleErrorToast } from "../utils/errorHandler";
 import { axiosInstance } from "../utils/axios";
 
 function useGetUnseenMessagesOnLogin() {

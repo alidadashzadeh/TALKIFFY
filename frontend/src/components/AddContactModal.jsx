@@ -1,13 +1,14 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-
 import toast from "react-hot-toast";
 
 import { Box, Button, Modal, TextField, Typography } from "@mui/material";
+
 import { useContactContext } from "../contexts/ContactContext";
 import { useAuthContext } from "../contexts/AuthContext";
-import useAddNewContact from "../hooks/useAddNewContact";
-import { useEffect } from "react";
 import { useThemeContext } from "../contexts/ThemeContext";
+
+import useAddNewContact from "../hooks/useAddNewContact";
 
 function AddContactModal() {
 	const { openAddContactModal, setOpenAddContactModal } = useContactContext();
@@ -107,13 +108,8 @@ function AddContactModal() {
 							}}
 						/>
 						<Box>
-							<Button
-								type="submit"
-								variant="contained"
-								disabled={loading}
-								// onClick={() => reset()}
-							>
-								Add contact
+							<Button type="submit" variant="contained" disabled={loading}>
+								{loading ? "Adding Contact..." : "Add contact"}
 							</Button>
 						</Box>
 					</form>

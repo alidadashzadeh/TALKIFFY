@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 import { Button } from "@mui/material";
-import { useThemeContext } from "../contexts/ThemeContext";
 import Switch from "@mui/material/Switch";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useNavigate } from "react-router-dom";
+
+import { useThemeContext } from "../contexts/ThemeContext";
 
 function SettingsPage() {
 	const { theme, setTheme } = useThemeContext();

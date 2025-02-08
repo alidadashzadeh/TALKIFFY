@@ -1,11 +1,13 @@
 import { useEffect, useRef } from "react";
+
 import { useContactContext } from "../contexts/ContactContext";
-import useGetMessages from "../hooks/useGetMessages";
 import { useMessagesContext } from "../contexts/MessagesContext";
+
 import MessageItem from "./MessageItem";
 import MessageHeader from "./MessageHeader";
 import MessageBar from "./MessageBar";
 import MessageLoading from "./MessageLoading";
+import useGetMessages from "../hooks/useGetMessages";
 
 function MainContent() {
 	const { currentContactId, setCurrentContactId } = useContactContext();

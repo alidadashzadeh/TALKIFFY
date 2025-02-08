@@ -1,4 +1,5 @@
 import { Avatar } from "@mui/material";
+
 import { useAuthContext } from "../contexts/AuthContext";
 import { useContactContext } from "../contexts/ContactContext";
 

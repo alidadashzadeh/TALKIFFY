@@ -1,9 +1,10 @@
 import { useState } from "react";
-import toast from "react-hot-toast";
 
 import { handleErrorToast } from "../utils/errorHandler.js";
 import { useAuthContext } from "./../contexts/AuthContext";
+
 import { axiosInstance } from "../utils/axios.js";
+import toast from "react-hot-toast";
 
 function useSignup() {
 	const [loading, setLoading] = useState(false);

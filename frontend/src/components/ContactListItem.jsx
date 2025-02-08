@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Avatar } from "@mui/material";
+
 import { useContactContext } from "../contexts/ContactContext";
 import { useSocketContext } from "../contexts/SocketContext";
 import { useMessagesContext } from "../contexts/MessagesContext";

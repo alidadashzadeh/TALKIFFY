@@ -1,4 +1,4 @@
-import { TextField, Typography } from "@mui/material";
+import { TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import useLogin from "./../hooks/useLogin.js";
 
 function Login() {
-	const { login } = useLogin();
+	const { loading, login } = useLogin();
 	const {
 		register,
 		handleSubmit,
@@ -38,6 +38,7 @@ function Login() {
 						label="Email"
 						variant="outlined"
 						className="text-red-600"
+						disabled={loading}
 						helperText={errors?.email?.message}
 						{...register("email", {
 							required: "Email is required",
@@ -58,7 +59,7 @@ function Login() {
 						variant="outlined"
 						error={errors.password ? true : false}
 						helperText={errors?.password?.message}
-						value="12345678"
+						disabled={loading}
 						{...register("password", {
 							required: "Password is required",
 						})}
@@ -75,8 +76,13 @@ function Login() {
 					<a href="#" className="text-sm hover:underline hover:text-blue-600">
 						Forgot password?
 					</a>
-					<Button type="submit" className="bg-sky-500" variant="contained">
-						Login
+					<Button
+						type="submit"
+						className="bg-sky-500"
+						variant="contained"
+						disabled={loading}
+					>
+						{loading ? "Logging in..." : "Login"}
 					</Button>
 				</form>
 				<Link

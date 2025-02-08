@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { handleErrorToast } from "../utils/errorHandler";
-import { useAuthContext } from "../contexts/AuthContext";
+
 import toast from "react-hot-toast";
+
+import { useAuthContext } from "../contexts/AuthContext";
 import { useSocketContext } from "../contexts/SocketContext";
 import { axiosInstance } from "../utils/axios";
+import { handleErrorToast } from "../utils/errorHandler";
 
 function useAddNewContact() {
 	const [loading, setLoading] = useState(false);

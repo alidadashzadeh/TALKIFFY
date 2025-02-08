@@ -1,7 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
 // contexts/ThemeContext.jsx
 import { createContext, useContext, useState, useEffect } from "react";
 
-// Create a context to share the dark mode state
 const ThemeContext = createContext();
 
 export const useThemeContext = () => useContext(ThemeContext);

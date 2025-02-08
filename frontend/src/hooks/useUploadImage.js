@@ -1,8 +1,10 @@
 import toast from "react-hot-toast";
 import { useAuthContext } from "./../contexts/AuthContext.jsx";
 import { axiosInstance } from "../utils/axios.js";
+import { useState } from "react";
 
 function useUploadImage() {
+	const [loading, setLoading] = useState(false);
 	const { currentUser } = useAuthContext();
 	const handleImageUpload = async (e) => {
 		const file = e.target.files[0];
@@ -10,6 +12,7 @@ function useUploadImage() {
 
 		const formData = new FormData();
 		formData.append("avatar", file);
+		setLoading(true);
 		try {
 			const { data } = await axiosInstance.patch(
 				`/users/${currentUser._id}`,
@@ -26,10 +29,12 @@ function useUploadImage() {
 			window.location.reload();
 		} catch (error) {
 			toast.error("something went wrong uploading image, try again!");
+		} finally {
+			setLoading(false);
 		}
 	};
 
-	return { handleImageUpload };
+	return { loading, handleImageUpload };
 }
 
 export default useUploadImage;

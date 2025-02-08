@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { handleErrorToast } from "../utils/errorHandler";
+
 import { useContactContext } from "../contexts/ContactContext.jsx";
 import { useMessagesContext } from "../contexts/MessagesContext.jsx";
 import { useSocketContext } from "../contexts/SocketContext.jsx";
+
 import { axiosInstance } from "../utils/axios.js";
+import { handleErrorToast } from "../utils/errorHandler";
 
 function useSendMessage() {
 	const [loading, setLoading] = useState(false);

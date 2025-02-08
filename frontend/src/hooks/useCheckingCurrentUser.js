@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 
 import { useAuthContext } from "./../contexts/AuthContext.jsx";
 import { axiosInstance } from "../utils/axios.js";
+import { handleErrorToast } from "../utils/errorHandler.js";
 
 function useCheckCurrentUser() {
 	const [loading, setLoading] = useState(true);
@@ -14,6 +15,7 @@ function useCheckCurrentUser() {
 			setCurrentUser(data?.data.data.user);
 		} catch (error) {
 			setCurrentUser(null);
+			handleErrorToast(error);
 		} finally {
 			setLoading(false);
 		}

@@ -1,12 +1,12 @@
-import { Button, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
+
+import { Button, TextField } from "@mui/material";
 
 import useSignup from "../hooks/useSignup.js";
 
 function SignupPage() {
-	const { signup } = useSignup();
+	const { loading, signup } = useSignup();
 	const {
 		register,
 		handleSubmit,
@@ -41,6 +41,7 @@ function SignupPage() {
 						variant="outlined"
 						error={errors.email ? true : false}
 						helperText={errors?.email?.message}
+						disabled={loading}
 						{...register("email", {
 							required: "Email is required",
 							pattern: {
@@ -62,6 +63,7 @@ function SignupPage() {
 						id="username"
 						label="Username"
 						variant="outlined"
+						disabled={loading}
 						error={errors.username ? true : false}
 						helperText={errors?.username?.message}
 						{...register("username", {
@@ -82,6 +84,7 @@ function SignupPage() {
 						id="password"
 						label="Password"
 						variant="outlined"
+						disabled={loading}
 						error={errors.password ? true : false}
 						helperText={errors?.password?.message}
 						{...register("password", {
@@ -105,6 +108,7 @@ function SignupPage() {
 						id="passwordConfirm"
 						label="Confirm Password"
 						variant="outlined"
+						disabled={loading}
 						error={errors.passwordConfirm ? true : false}
 						helperText={errors?.passwordConfirm?.message}
 						{...register("passwordConfirm", {
@@ -122,8 +126,13 @@ function SignupPage() {
 						}}
 					/>
 
-					<Button type="submit" className="bg-sky-500" variant="contained">
-						Sign up
+					<Button
+						type="submit"
+						className="bg-sky-500"
+						variant="contained"
+						disabled={loading}
+					>
+						{loading ? "Signing up..." : "Sign up"}
 					</Button>
 				</form>
 				<Link
