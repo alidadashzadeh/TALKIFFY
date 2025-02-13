@@ -52,23 +52,23 @@ NODE_ENV=development
 
 TALKIFFY/  
 │  
-├── backend/ # Express backend
-│ ├── avatars/ # user's avatars
-│ ├── controllers/ # Route controllers
-│ ├── lib/ # usefull modules
-│ ├── models/ # MongoDB models
-│ ├── routes/ # API routes
-│ ├── .env # Backend environment variables
-│ └── server.js # Express server setup
-│    
-└── frontend/ # React frontend with Vite  
-│ ├── src/ # React app source code
-│ ├── index.html # Main HTML template
-│ ├── package.json # Frontend dependencies
-│ └── vite.config.js # Vite configuration
-│ └── postcss.config.js # css config
-│ └── tailwind.config.js # tailwind config
-│ └── eslint.config.js # eslint config
+├── backend/ # Express backend  
+│ ├── avatars/ # user's avatars  
+│ ├── controllers/ # Route controllers  
+│ ├── lib/ # usefull modules  
+│ ├── models/ # MongoDB models  
+│ ├── routes/ # API routes  
+│ ├── .env # Backend environment variables  
+│ └── server.js # Express server setup  
+│      
+└── frontend/ # React frontend with Vite    
+│ ├── src/ # React app source code  
+│ ├── index.html # Main HTML template  
+│ ├── package.json # Frontend dependencies  
+│ └── vite.config.js # Vite configuration  
+│ └── postcss.config.js # css config  
+│ └── tailwind.config.js # tailwind config  
+│ └── eslint.config.js # eslint config  
 
 ### NOTES
 
