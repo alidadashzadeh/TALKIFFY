@@ -22,9 +22,9 @@ Clone the repository to your local machine:
 
 Navigate to the backend folder and install the necessary dependencies:
 
-cd backend
-npm install
-npm run dev
+cd backend  
+npm install  
+npm run dev  
 
 need to install nodemon for development purposes
 
@@ -32,26 +32,26 @@ need to install nodemon for development purposes
 
 Navigate to the frontend folder and install the necessary dependencies:
 
-cd frontend
-npm install
-npm run dev
+cd frontend  
+npm install  
+npm run dev  
 
 ### 4. Environment Variables
 
 Create a .env file in the backend folder and set these variables:
 
-MONGODB_URI= your URI
-PASSWORD= your password
-PORT=5001
-JWT_COOKIE_EXPIRES_IN=7
-JWT_SECRET= your password
-JWT_EXPIRES_IN=7d
-NODE_ENV=development
+MONGODB_URI= your URI  
+PASSWORD= your password  
+PORT=5001  
+JWT_COOKIE_EXPIRES_IN=7  
+JWT_SECRET= your password  
+JWT_EXPIRES_IN=7d  
+NODE_ENV=development  
 
 # folder structure
 
-TALKIFFY/
-│
+TALKIFFY/  
+│  
 ├── backend/ # Express backend
 │ ├── avatars/ # user's avatars
 │ ├── controllers/ # Route controllers
@@ -60,8 +60,8 @@ TALKIFFY/
 │ ├── routes/ # API routes
 │ ├── .env # Backend environment variables
 │ └── server.js # Express server setup
-│
-└── frontend/ # React frontend with Vite
+│    
+└── frontend/ # React frontend with Vite  
 │ ├── src/ # React app source code
 │ ├── index.html # Main HTML template
 │ ├── package.json # Frontend dependencies
