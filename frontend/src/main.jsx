@@ -11,7 +11,7 @@ import App from "./App.jsx";
 
 import { ContactContextProvider } from "./contexts/ContactContext.jsx";
 import { MessagesContextProvider } from "./contexts/MessagesContext.jsx";
-import { ThemeContextProvider } from "./contexts/ThemeContext.jsx";
+import { SettingContextProvider } from "./contexts/SettingContext.jsx";
 import { SocketContextProvider } from "./contexts/SocketContext.jsx";
 
 const themeFont = createTheme({
@@ -28,11 +28,11 @@ createRoot(document.getElementById("root")).render(
 					<AuthContextProvider>
 						<ContactContextProvider>
 							<MessagesContextProvider>
-								<ThemeContextProvider>
+								<SettingContextProvider>
 									<SocketContextProvider>
 										<App />
 									</SocketContextProvider>
-								</ThemeContextProvider>
+								</SettingContextProvider>
 							</MessagesContextProvider>
 						</ContactContextProvider>
 					</AuthContextProvider>

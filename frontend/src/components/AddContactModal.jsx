@@ -6,7 +6,7 @@ import { Box, Button, Modal, TextField, Typography } from "@mui/material";
 
 import { useContactContext } from "../contexts/ContactContext";
 import { useAuthContext } from "../contexts/AuthContext";
-import { useThemeContext } from "../contexts/ThemeContext";
+import { useSettingContext } from "../contexts/SettingContext";
 
 import useAddNewContact from "../hooks/useAddNewContact";
 
@@ -14,7 +14,7 @@ function AddContactModal() {
 	const { openAddContactModal, setOpenAddContactModal } = useContactContext();
 	const { currentUser } = useAuthContext();
 	const { loading, addNewContact, isContactAdded } = useAddNewContact();
-	const { theme } = useThemeContext();
+	const { theme } = useSettingContext();
 
 	const {
 		register,
